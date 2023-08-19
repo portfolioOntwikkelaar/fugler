@@ -1,0 +1,133 @@
+@import url('https://fonts.googleapis.com/css2?family=Yuji+Boku&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.container{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url('./images/bgimg.jpeg');
+    background-size: 100% 100%;
+    background-position: center center;
+    min-height: 100vh;
+    overflow: hidden;
+}
+/* Text Animation Property */
+h1{
+    color: white;
+
+    font-size: 4rem;
+    letter-spacing: 3px;
+    text-shadow: 0px 5px 5px black;
+    font-family: 'Yuji Boku', serif;
+    z-index: 3;
+    /* animation property */
+    animation: text 3s 1;
+}
+.bird{
+    background: url('./images/bird-cells-new.svg');
+    background-size: auto 100%;
+    width: 100px;
+    height: 125px;
+    will-change: background-position;
+    /* animation property */
+    animation-name: fly;
+    animation-timing-function: steps(10);
+    animation-iteration-count: infinite;
+}
+.bird-one{
+    animation-duration: 1s;
+    animation-delay: -0.5s;
+}
+.bird-two{
+    animation-duration: .9s;
+    animation-delay: -0.75s;
+}
+.bird-three{
+    animation-duration: 1.25s;
+    animation-delay: -0.25s;
+}
+.bird-four{
+    animation-duration: 1.1ss;
+    animation-delay: -0.5s;
+}
+.bird-container{
+    position: absolute;
+    top: 20%;
+    left: -10%;
+    transform: scale(0) translateX(-10vw);
+    will-change: transform;
+    /* animation property */
+    animation-name: fly-right;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+.one{
+    animation-duration: 15s;
+    animation-delay: 0;
+}
+.two{
+    animation-duration: 16s;
+    animation-delay: 1s;
+}
+.three{
+    animation-duration: 14.6s;
+    animation-delay: 9.5s;
+}
+.four{
+    animation-duration: 16s;
+    animation-delay: 10.25s;
+}
+
+/* Animation for Birds */
+@keyframes fly{
+    100%{
+        background-position: -900px 0;
+    }
+}
+@keyframes fly-right{
+    0%
+    {
+        transform: translateY(2vh) translateX(-10vw) scale(0.5);
+    }
+    10%
+    {
+        transform: translateY(0vh) translateX(10vw) scale(0.4);
+    }
+    20%
+    {
+        transform: translateY(4vh) translateX(30vw) scale(0.6);
+    }
+    30%
+    {
+        transform: translateY(1vh) translateX(50vw) scale(0.45);
+    }
+    40%
+    {
+        transform: translateY(2.5vh) translateX(70vw) scale(0.5);
+    }
+    50%
+    {
+        transform: translateY(0vh) translateX(90vw) scale(0.45);
+    }
+    60%
+    {
+        transform: translateY(0vh) translateX(110vw) scale(0.45);
+    }
+    100%
+    {
+        transform: translateY(0vh) translateX(210vw) scale(0.6);
+    }
+}
+
+/* Animation for text */
+@keyframes text{
+    30%{
+        letter-spacing: 10px;
+        margin-bottom: -40px;
+        color: #000;
+    }
+}
